@@ -1,15 +1,20 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Inter, Onest } from "next/font/google";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+// Onest font from Google Fonts
+const onest = Onest({
+  variable: "--font-onest",
   subsets: ["latin"],
+  display: "swap",
+  weight: ["400", "500", "600", "700"], // Regular, Medium, SemiBold, Bold
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+// Inter font from Google Fonts
+const inter = Inter({
+  variable: "--font-inter",
   subsets: ["latin"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -25,7 +30,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${onest.variable} ${inter.variable} antialiased`}
       >
         {children}
       </body>
